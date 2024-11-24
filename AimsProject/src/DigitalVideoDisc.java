@@ -62,4 +62,17 @@ public class DigitalVideoDisc {
 	public int getId() {
 		return id;
 	}
+	@Override
+    public String toString() {
+        return "DVD: " + this.title +
+                " - Category: " + this.category +
+                " - Director: " + this.title +
+                " - DVD length: " + this.length +
+                " - Cost: " + this.cost + "$";
+    }
+	
+	public boolean isMatch(String title) {
+		return this.title.toLowerCase().contains(title.toLowerCase());
+	}
+
 }

@@ -12,7 +12,6 @@ public class Cart {
             System.out.println("The cart is full.");
         }
     }
-    
     public void addDigitalVideoDisc(DigitalVideoDisc [] dvdList) {
     	if (dvdList.length < MAX_NUMBERS_ORDERED) {
     		for (int i = 0; i < dvdList.length; i++) {
@@ -28,7 +27,6 @@ public class Cart {
         DigitalVideoDisc [] dvdList = {dvd1, dvd2};
         addDigitalVideoDisc(dvdList);
     }
-    
     public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
         for (int i = 0; i < qtyOrdered; i++) {
             if (itemsOrdered[i] == disc) {
@@ -43,12 +41,48 @@ public class Cart {
         }
         System.out.println("The disc \"" + disc.getTitle() + "\" not found in cart.");
     }
-
+    
+    public void searchByID(int id) {
+    	boolean found = false;
+    	for (int i = 0; i < qtyOrdered; i++) {
+    		if (itemsOrdered[i].getId() == id) {
+    			System.out.println("Found" + itemsOrdered[i]);
+    			found = true;
+    		}
+    	}
+    	if (!found) {	
+    		System.out.println("No DVDs were found!");
+    	}
+    }
+    
+    public void searchByTitle(String title) {
+    	boolean found = false;
+    	for (int i = 0; i < qtyOrdered; i++) {
+    		if (itemsOrdered[i].isMatch(title)) {
+    			System.out.println("Found" + itemsOrdered[i]);
+    			found = true;
+    		}
+    	}
+    	if (!found) {
+    		System.out.println("No DVDs were found!");
+    	}
+    }
+    
     public float totalCost() {
         float total = 0;
         for (int i = 0; i < qtyOrdered; i++) {
             total += itemsOrdered[i].getCost();
         }
         return total;
+    }
+    
+    public void print() {
+    	System.out.println("***********************CART***********************");
+    	System.out.println("Ordered Items:");
+    	for (int i = 0; i < qtyOrdered; i++) {
+    		System.out.println(i+1 + ". " + itemsOrdered[i]);
+    	}
+    	System.out.println("Total cost:" + totalCost());
+    	System.out.println("***************************************************");
     }
 }
