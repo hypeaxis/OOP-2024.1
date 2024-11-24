@@ -1,0 +1,10 @@
+When should accessor methods be used? 
+• When we need to enforce some sort of invariant or validation rule on the value being set 
+• When we need to hide the internal representation of an object and provide a more abstract 
+interface to it 
+• When we need to provide read-only access to a property or attribute 
+
+Question: If you create a constructor method to build a DVD by title then create a constructor method to 
+build a DVD by category. Does JAVA allow you to do this?   
+• Yes, Java allows to creating multiple constructor methods for a class, if they have di erent 
+parameter lists. It’s called constructor overloading. 
