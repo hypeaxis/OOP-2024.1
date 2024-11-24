@@ -6,20 +6,24 @@ public class DigitalVideoDisc {
     private float cost;
 
     public String getTitle() {
-        return title;
-    }
-    public String getCategory() {
-        return category;
-    }
-    public String getDirector() {
-        return director;
-    }
-    public int getLength() {
-        return length;
-    }
-    public float getCost() {
-        return cost;
-    }
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+	public String getDirector() {
+		return director;
+	}
+	public int getLength() {
+		return length;
+	}
+	public float getCost() {
+		return cost;
+	}
     
     public DigitalVideoDisc(String title) {
         this.title = title;
